@@ -7,22 +7,22 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-  ingressClassName: nginx
+  ingressClassName: paytm
   rules:
   - http:
       paths:
-      - path: /nginx(/|$)(.*)
+      - path: /paytm(/|$)(.*)
         pathType: Prefix
         backend:
           service:
-            name: nginx
+            name: movies
             port:
               number: 80
       - path: /httpd(/|$)(.*)
         pathType: Prefix
         backend:
           service:
-            name: httpd
+            name: train
             port:
               number: 80
       - path: /(.*)
