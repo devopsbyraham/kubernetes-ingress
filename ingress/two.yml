@@ -6,15 +6,15 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: zomato
+      app: movies
   template:
     metadata:
       labels:
-        app: zomato
+        app: movies
     spec:
       containers:
       - name: cont-2
-        image: httpd
+        image: rahamshaik/paytmmovies:latest
         ports:
         - containerPort: 80
         env:
@@ -30,4 +30,4 @@ spec:
   ports:
   - port: 80
   selector:
-    app: zomato
+    app: movies
